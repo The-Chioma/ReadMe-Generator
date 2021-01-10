@@ -1,21 +1,22 @@
 const inquirer = require('inquirer');
-const generateMarkdown = require('./generateMarkdown');
+const generateMarkdown = require('./generateMarkdown.js');
+const fs = require('fs');
 
 
-//Available license. More licenses can simply be added to the array if requiured
-const licenses = ['Creative Commons', 'MIT', 'ISC', 'GNU General Public License']
+//Placed some available licenses in an array
+const licenses = ['MIT', 'Apache','GNU General Public License','ISC']
 
-//questions to provide to inquirer
+//questions below
 const questions = [
     {
         name: 'title',
         type: 'input',
-        message: 'Please enter the title of your Project:'
+        message: 'What is the title of your Project:'
     },
     {
         name: 'description',
         type: 'input',
-        message: 'Please enter the description of your Project:'
+        message: 'Please enter a description of your Project:'
     },
     {
         name: 'installation',
@@ -41,7 +42,7 @@ const questions = [
         name: 'license',
         type: 'list',
         message: 'Please select from the following licenses: ',
-        choices: licenses
+        choices: licenses //from above array
     },
     {
         name: 'github',
@@ -55,10 +56,19 @@ const questions = [
     }
 ];
 
+
+
 const init = () => {
-    inquirer
-    .prompt(questions)
-    .then(answers => generateMarkdown(answers))
+    inquirer.prompt(questions).then((answer) => {
+        fs.writeFileSync("newReadMe.md", generateMarkdown(answer), function (err) {
+          if (error) {
+            console.log(error);
+          } else {
+            console.log("Success");
+          }
+        });
+      });
+    
 }
 
 init();

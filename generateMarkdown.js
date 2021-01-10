@@ -16,19 +16,19 @@ function generateMarkdown(answer) {
     ## Description of Project
     ${answer.description}
     ## Live URL
-    Visit the live application:
+    To visit the live application:
     ${answer.url}
     ## Purpose of the Project:
     ${answer.purpose}
-    ## Contributers:
+    ## Contributors:
     ${answer.contributions}
     ## License:
     ${answer.license}
     ## Github Profile:
-    To see the operations behind this project, vist my GitHub profile:
+    Visit my GitHub profile:
     ${answer.github}
     ## Email Address:
-    For any questions about this project, email me at:
+    To know more about this project, email me at:
     ${answer.email}
 
 `;
