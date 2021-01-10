@@ -1,9 +1,5 @@
-const fs = require('fs');
 
-// function to generate markdown for README
-function generateMarkdown(answer) {
-  return `
-  # ${answer.title}
+  # ReadMe.md Generator
 
   # Table of Contents
     - [description](#description)
@@ -15,32 +11,28 @@ function generateMarkdown(answer) {
     - [email](#email)
 
     ## Description of Project
-    ${answer.description}
+    Dynamically creates a markdown file using node libraries.
 
     ## Installation
-    ${answer.installation}
+    npm install
 
     ## Usage
-    ${answer.usage}
+    run "node index.js" in the command line
 
     ## Contribution:
-    ${answer.contribution}
+    by forking the repository and adding additional code for development.
 
     ## Testing
-    ${answer.test}
+    npm run test
 
     ## License:
-    ${answer.license}
+    Apache
 
     ## Github Profile:
     Visit my GitHub profile:
-    ${answer.github}
+    github.com/the-chioma
     
     ## Email Address:
     To know more about this project, email me at:
-    ${answer.email}
+    chiomaonyeguke1@gmail.com
 
-`;
-}
-
-module.exports = generateMarkdown;
